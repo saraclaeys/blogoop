@@ -10,6 +10,12 @@ class Database
     }
 
     public function open_db_connection(){
-        $this->connection = mysqli_connect(DB_HOST), DB_USER, DB_PASS, DB_NAME;
+        $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        if (mysqli_connect_errno()){
+            die("Database connection mislukt" . mysqli_error());
+        }
     }
+
 }
+$database = new Database();
+?>

@@ -1,1 +1,4 @@
-<?php include ('config.php'); ?>
+<?php
+include ('config.php');
+include ('Database.php');
+?>
