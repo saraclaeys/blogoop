@@ -30,8 +30,10 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="users.html">All users</a>
-                <a class="collapse-item" href="add_user.html">Create user</a>
+                <a class="collapse-item" href="users.php">All users</a>
+                <a class="collapse-item" href="createUser.php">Create user</a>
+                <a class="collapse-item" href="editUsers.php">Edit user</a>
+                <a class="collapse-item" href="deleteUser.php">Delete user</a>
             </div>
         </div>
     </li>
