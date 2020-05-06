@@ -16,6 +16,22 @@ class Database
         }
     }
 
+    private  function confirm_query($result){
+        if(!$result){
+            die("Query kon niet worden uitgevoerd" .$this->connection->error);
+        }
+    }
+
+    public function query($sql){
+        $result = $this->connection->query($sql);
+        $this->confirm_query($result);
+        return $result;
+    }
+
+    public function escape_string($string){
+        $escape_string = $this->connection->real_escape_string($string);
+        return $escape_string;
+    }
 }
 $database = new Database();
 ?>
