@@ -11,16 +11,17 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-12">
+            <h3>Alle users </h3>
             <?php
-            if ($database->connection) {
-                echo "ok connectie gemaakt met de database";
+            $result = User::find_all_users();
+            while($row = mysqli_fetch_array($result)){
+                echo $row['username'] . "<br>";
             }
-
-            echo "<br>" . "ophalen van 1 user" . "<br>";
-            $sql = "SELECT * FROM user WHERE id = 1";
-            $result = $database->query($sql);
-            $user_found = mysqli_fetch_array($result);
-            echo $user_found["username"];
+            ?>
+            <h3>Zoek user met id </h3>
+            <?php
+            $result = User::find_user_by_id(1);
+            echo $result['username'] . "<br>";
             ?>
         </div>
         <!-- Earnings (Monthly) Card Example -->
