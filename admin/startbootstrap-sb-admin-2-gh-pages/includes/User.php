@@ -22,7 +22,11 @@ class User
     public static function  find_this_query($sql){
         global $database;
         $result = $database->query($sql);
-        return $result;
+        $the_object_array = array();
+        while ($row = mysqli_fetch_array($result)){
+            $the_object_array[] = self::instantie($row);
+        }
+        return $the_object_array;
     }
 
     public static function  find_all_users(){
@@ -31,8 +35,12 @@ class User
 
     public static function find_user_by_id($user_id){
         $result = self::find_this_query("SELECT * FROM user WHERE id = $user_id");
-        $user_found = mysqli_fetch_array($result);
-        return $user_found;
+        if (!empty($result)){
+            return array_shift($result);
+        } else {
+            return false;
+        }
+
     }
 
 }
