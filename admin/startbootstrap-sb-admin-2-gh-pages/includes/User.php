@@ -8,7 +8,7 @@ class User
     public $password;
     public $first_name;
     public $last_name;
-    
+
     public static function  find_this_query($sql){
         global $database;
         $result = $database->query($sql);

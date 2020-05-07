@@ -20,8 +20,17 @@
             ?>
             <h3>Zoek user met id </h3>
             <?php
+            /*$result = User::find_user_by_id(1);
+            echo $result['username'] . "<br>";*/
             $result = User::find_user_by_id(1);
-            echo $result['username'] . "<br>";
+            $user = new User();
+            $user->id= $result['id'];
+            $user->username = $result['username'];
+            $user->password = $result['password'];
+            $user->first_name = $result['first_name'];
+            $user->last_name = $result['last_name'];
+
+            echo $user->username . ' - ' . $user->id;
             ?>
         </div>
         <!-- Earnings (Monthly) Card Example -->
