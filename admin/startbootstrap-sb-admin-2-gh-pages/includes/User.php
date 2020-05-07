@@ -3,15 +3,18 @@
 
 class User
 {
-    public static function  find_all_users(){
+    public static function  find_this_query($sql){
         global $database;
-        $result = $database->query("SELECT * FROM user");
+        $result = $database->query($sql);
         return $result;
     }
 
+    public static function  find_all_users(){
+        return self::find_this_query("SELECT * FROM user");
+    }
+
     public static function find_user_by_id($user_id){
-        global $database;
-        $result = $database->query("SELECT * FROM user WHERE id = $user_id");
+        $result = self::find_this_query("SELECT * FROM user WHERE id = $user_id");
         $user_found = mysqli_fetch_array($result);
         return $user_found;
     }
