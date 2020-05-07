@@ -20,7 +20,8 @@ class User
         return $the_object;
     }
 
-    private function has_the_attribute($the_attribute){
+    private function has_the_attribute($the_attribute)
+    {
         $object_properties = get_object_vars($this);
         return array_key_exists($the_attribute, $object_properties);
     }
@@ -44,12 +45,12 @@ class User
     public static function find_user_by_id($user_id)
     {
         $result = self::find_this_query("SELECT * FROM user WHERE id = $user_id");
-        if (!empty($result)) {
+        /*if (!empty($result)) {
             return array_shift($result);
         } else {
             return false;
-        }
-
+        }*/
+        return !empty($result) ? array_shift($result) : false;
     }
 
 }
