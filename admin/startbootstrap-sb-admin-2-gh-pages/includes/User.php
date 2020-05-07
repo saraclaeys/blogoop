@@ -9,6 +9,16 @@ class User
     public $first_name;
     public $last_name;
 
+    public static function instantie($result){
+        $the_object = new self();
+        $the_object->id = $result['id'];
+        $the_object->username = $result['username'];
+        $the_object->password = $result['password'];
+        $the_object->first_name = $result['first_name'];
+        $the_object->last_name = $result['last_name'];
+        return $the_object;
+    }
+
     public static function  find_this_query($sql){
         global $database;
         $result = $database->query($sql);

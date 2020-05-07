@@ -23,14 +23,9 @@
             /*$result = User::find_user_by_id(1);
             echo $result['username'] . "<br>";*/
             $result = User::find_user_by_id(1);
-            $user = new User();
-            $user->id= $result['id'];
-            $user->username = $result['username'];
-            $user->password = $result['password'];
-            $user->first_name = $result['first_name'];
-            $user->last_name = $result['last_name'];
+            $user = User::instantie($result);
 
-            echo $user->username . ' - ' . $user->id;
+            echo $user->username . ' - ' . $user->id . ' - ' . $user->first_name;
             ?>
         </div>
         <!-- Earnings (Monthly) Card Example -->
