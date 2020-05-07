@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
-                                <form class="user">
+                                <form class="user" method="post">
                                     <div class="form-group">
                                         <label for="username">Username:</label>
                                         <input type="text" name="username" form-control form-control-user"
