@@ -22,6 +22,7 @@
             <?php
             /*$result = User::find_user_by_id(1);
             echo $result['username'] . "<br>";*/
+
             $user = User::find_user_by_id(1);
 
 

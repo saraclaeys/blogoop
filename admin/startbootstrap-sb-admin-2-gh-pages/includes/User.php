@@ -66,4 +66,8 @@ class User
         $the_result_array = self::find_this_query($sql);
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
+
+    public function create(){
+
+    }
 }
