@@ -5,7 +5,7 @@ require_once("includes/header.php");
 <?php
 $the_message = '';
 if ($session->is_signed_in()) {
-    redirect("index.php");
+    redirect("login.php");
 }
 
 if (isset($_POST['submit'])) {

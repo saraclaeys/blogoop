@@ -32,7 +32,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="users.php">All users</a>
                 <a class="collapse-item" href="createUser.php">Create user</a>
-                <a class="collapse-item" href="editUsers.php">Edit user</a>
+                <a class="collapse-item" href="editUser.php">Edit user</a>
                 <a class="collapse-item" href="deleteUser.php">Delete user</a>
             </div>
         </div>
@@ -58,6 +58,14 @@
             <i class="far fa-comments"></i>
             <span>Comments</span></a>
     </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
 
 </ul>
 <!-- End of Sidebar -->
