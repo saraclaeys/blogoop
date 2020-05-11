@@ -16,7 +16,7 @@
             $users = User::find_all_users();
             foreach ($users as $user) {
                 echo $user->username . "<br>";
-         }
+            }
             ?>
             <h3>Zoek user met id </h3>
             <?php
@@ -25,9 +25,20 @@
 
             $user = User::find_user_by_id(1);
 
-
             echo $user->username . ' - ' . $user->id . ' - ' . $user->first_name;
             ?>
+
+            <?php
+            // create user
+            $user = new User();
+            $user->username = "Sara";
+            $user->password = "123";
+            $user->first_name = "Sara";
+            $user->last_name = "Claeys";
+
+            $user->create();
+            ?>
+
         </div>
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
