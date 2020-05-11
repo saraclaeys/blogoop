@@ -71,11 +71,11 @@ class User
         global $database;
 
         $sql = "INSERT INTO user (username, password, first_name, last_name)";
-        $sql .= " VALUES ";
+        $sql .= " VALUES ('";
         $sql .= $database->escape_string($this->username) . "', '";
         $sql .= $database->escape_string($this->password) . "', '";
         $sql .= $database->escape_string($this->first_name) . "', '";
-        $sql .= $database->escape_string($this->last_name) . "', '";
+        $sql .= $database->escape_string($this->last_name) . "')";
 
         if ($database->query($sql)){
             $this->id = $database->the_insert_id();
