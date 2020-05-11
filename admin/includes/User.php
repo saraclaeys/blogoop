@@ -86,4 +86,18 @@ class User
 
         $database->query($sql);
     }
+
+    public function  update(){
+        global $database;
+
+        $sql = "UPDATE user SET ";
+        $sql .= "username= '" . $database->escape_string($this->username) . "', ";
+        $sql .= "username= '" . $database->escape_string($this->password) . "', ";
+        $sql .= "first_name= '" . $database->escape_string($this->first_name) . "', ";
+        $sql .= "last_name= '" . $database->escape_string($this->last_name) . "', ";
+        $sql .= "WHERE id = " . $database->escape_string($this->id);
+
+        $database->query($sql);
+        return (mysqli_affected_rows($database->connection) == 1) ? true : false;
+    }
 }

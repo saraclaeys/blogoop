@@ -27,6 +27,10 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
+<?php require_once ('includes/header.php');?>
+
+<body class="bg-gradient-primary">
+<div class="container">
 <!-- Outer Row -->
 <!--    <div class="row justify-content-center">-->
 <div class="col-xl-10 col-lg-12 col-md-9">
@@ -39,16 +43,15 @@ if (isset($_POST['submit'])) {
                     <div class="p-5">
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                            <h2><?php echo $the_message; ?></h2>
                         </div>
                         <form class="user" method="post">
                             <div class="form-group">
                                 <label for="username">Username: </label>
-                                <input type="text" class="form-control" placeholder="Enter username..." name="username" value="<?php echo htmlentities($username); ?>">
+                                <input type="text" class="form-control form-control-user" value="<?php echo htmlentities($username);?> " name="username">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password: </label>
-                                <input type="password" class="form-control" placeholder="Password" name="password" value="<?php echo htmlentities($password); ?>">
+                                <input type="password" class="form-control form-control-user" value="<?php echo htmlentities($password);?> placeholder="Password" name="password">
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="submit" value="Submit" class="btn btn-primary">
