@@ -53,6 +53,15 @@
 
             ?>
 
+            <h3>Alle foto's</h3>
+            <?php
+            $photos = Photo::find_all();
+            foreach ($photos as $photo){
+                echo $photo->title . "<br>";
+            }
+
+            ?>
+
         </div>
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">
