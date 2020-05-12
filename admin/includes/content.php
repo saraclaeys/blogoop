@@ -70,6 +70,8 @@
 
             $photo->save();
 
+            echo  INCLUDES_PATH
+
             ?>
 
         </div>
