@@ -110,4 +110,8 @@ class User
         $database->query($sql);
         return(mysqli_affected_rows($database->connection) == 1) ? true : false;
     }
+
+    public function save(){
+        return isset($this->id) ? $this->update() : $this->create();
+    }
 }

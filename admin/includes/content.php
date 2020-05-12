@@ -52,13 +52,13 @@
 
                         */ ?>
 
-            <?php
-
+<!--            --><?php
+/*
             // delete user
             $user = User::find_user_by_id(5);
             $user->delete();
 
-            ?>
+            */?>
 
         </div>
         <!-- Earnings (Monthly) Card Example -->
