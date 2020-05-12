@@ -5,7 +5,7 @@ class User
 {
     protected static $db_table = "user";
     protected static $db_table_fields = array('username', 'password', 'first_name', 'last_name');
-    
+
     public $id;
     public $username;
     public $password;
@@ -74,7 +74,7 @@ class User
         global $database;
         $properties = $this->properties();
 
-        $sql = "INSERT INTO " . self::$db_table . " (" . implode(",", array_keys($properties)) . ")";
+        $sql = "INSERT INTO " . self::$db_table . " (" . implode("','", array_keys($properties)) . ")";
         $sql .= " VALUES ('". implode("','", array_values($properties)) . "')";
 
         if ($database->query($sql)){
@@ -104,7 +104,7 @@ class User
     public function delete(){
         global  $database;
         $sql = "DELETE FROM " . self::$db_table;
-        $sql .= "WHERE id= " . $database->escape_string($this->id);
+        $sql .= " WHERE id= " . $database->escape_string($this->id);
         $sql .= " LIMIT 1";
 
         $database->query($sql);
@@ -112,7 +112,14 @@ class User
     }
 
     protected function  properties(){
-        return get_object_vars($this);
+//        return get_object_vars($this);
+        $properties = array();
+        foreach (self::$db_table_fields as $db_field){
+            if (property_exists($this, $db_field)){
+                $properties[$db_field] = $this->$db_field;
+            }
+            return $properties;
+        }
     }
 
     public function save(){
