@@ -6,12 +6,12 @@ class Db_object
 
     public static function find_all()
     {
-        return self::find_this_query("SELECT * FROM " . self::$db_table);
+        return static::find_this_query("SELECT * FROM " . static::$db_table);
     }
 
     public static function find_by_id($id)
     {
-        $result = self::find_this_query("SELECT * FROM " . self::$db_table . " WHERE id = $id LIMIT 1");
+        $result = static::find_this_query("SELECT * FROM " . static::$db_table . " WHERE id = $id LIMIT 1");
         /*if (!empty($result)) {
             return array_shift($result);
         } else {
@@ -26,7 +26,7 @@ class Db_object
         $result = $database->query($sql);
         $the_object_array = array();
         while ($row = mysqli_fetch_array($result)) {
-            $the_object_array[] = self::instantie($row);
+            $the_object_array[] = static::instantie($row);
         }
         return $the_object_array;
     }
@@ -56,7 +56,7 @@ class Db_object
         global $database;
         $properties = $this->clean_properties();
 
-        $sql = "INSERT INTO " . self::$db_table . " (" . implode(",", array_keys($properties)) . ")";
+        $sql = "INSERT INTO " . static::$db_table . " (" . implode(",", array_keys($properties)) . ")";
         $sql .= " VALUES ('". implode("','", array_values($properties)) . "')";
         //testing
         // var_dump($sql);
@@ -80,7 +80,7 @@ class Db_object
             $properties_assoc[] = "{key}='{value}'";
         }
 
-        $sql = "UPDATE " . self::$db_table . " SET ";
+        $sql = "UPDATE " . static::$db_table . " SET ";
         $sql .= implode(",", $properties_assoc);
         $sql .= "WHERE id = " . $database->escape_string($this->id);
 
@@ -90,7 +90,7 @@ class Db_object
 
     public function delete(){
         global  $database;
-        $sql = "DELETE FROM " . self::$db_table;
+        $sql = "DELETE FROM " . static::$db_table;
         $sql .= " WHERE id= " . $database->escape_string($this->id);
         $sql .= " LIMIT 1";
 
@@ -101,7 +101,7 @@ class Db_object
     protected function  properties(){
 //        return get_object_vars($this);
         $properties = array();
-        foreach (self::$db_table_fields as $db_field){
+        foreach (static::$db_table_fields as $db_field){
             if (property_exists($this, $db_field)){
                 $properties[$db_field] = $this->$db_field;
             }
