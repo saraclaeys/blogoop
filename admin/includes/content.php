@@ -62,6 +62,16 @@
 
             ?>
 
+            <?php
+            $photo = new Photo();
+            $photo->title = "SAM";
+            $photo->description = "Lorem ipsum";
+            $photo->size = 15;
+
+            $photo->save();
+
+            ?>
+
         </div>
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-xl-3 col-md-6 mb-4">

@@ -13,4 +13,6 @@ class Photo extends Db_object
     public $type;
     public $size;
 
+
+
 }
