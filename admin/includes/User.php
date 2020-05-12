@@ -1,7 +1,7 @@
 <?php
 
 
-class User
+class User extends Db_object
 {
     protected static $db_table = "user";
     protected static $db_table_fields = array('username', 'password', 'first_name', 'last_name');
