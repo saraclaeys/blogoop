@@ -43,7 +43,7 @@ class User
         return self::find_this_query("SELECT * FROM " . self::$db_table);
     }
 
-    public static function find_by_id($user_id)
+    public static function find_by_id($id)
     {
         $result = self::find_this_query("SELECT * FROM " . self::$db_table . " WHERE id = $id LIMIT 1");
         /*if (!empty($result)) {

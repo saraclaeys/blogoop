@@ -13,7 +13,7 @@
         <div class="col-12">
             <h3>Alle users </h3>
             <?php
-            $users = User::find_all_users();
+            $users = User::find_all();
             foreach ($users as $user) {
                 echo $user->username . "<br>";
             }
@@ -23,7 +23,7 @@
             /*$result = User::find_user_by_id(1);
             echo $result['username'] . "<br>";*/
 
-            $user = User::find_user_by_id(1);
+            $user = User::find_by_id(1);
 
 
             echo $user->username . ' - ' . $user->id . ' - ' . $user->first_name;
@@ -41,7 +41,7 @@
             <?php
 
             // update user
-            $user = User::find_user_by_id(2);
+            $user = User::find_by_id(2);
             $user->last_name = "Berbic";
 
             $user->save();
