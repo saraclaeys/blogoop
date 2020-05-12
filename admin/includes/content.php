@@ -42,13 +42,21 @@
 
                         */ ?>
 
+            <!--     --><?php
+            /*
+                        // update user
+                        $user = User::find_user_by_id(2);
+                        $user->last_name = "Williams";
+
+                        $user->update();
+
+                        */ ?>
+
             <?php
 
-            // update user
-            $user = User::find_user_by_id(2);
-            $user->last_name = "Williams";
-
-            $user->update();
+            // delete user
+            $user = User::find_user_by_id(5);
+            $user->delete();
 
             ?>
 
