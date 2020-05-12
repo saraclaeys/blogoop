@@ -74,7 +74,7 @@ class User
         global $database;
         $properties = $this->properties();
 
-        $sql = "INSERT INTO " . self::$db_table . " (" . implode("','", array_keys($properties)) . ")";
+        $sql = "INSERT INTO " . self::$db_table . " (" . implode(",", array_keys($properties)) . ")";
         $sql .= " VALUES ('". implode("','", array_values($properties)) . "')";
 
         if ($database->query($sql)){
@@ -118,8 +118,8 @@ class User
             if (property_exists($this, $db_field)){
                 $properties[$db_field] = $this->$db_field;
             }
-            return $properties;
         }
+        return $properties;
     }
 
     public function save(){

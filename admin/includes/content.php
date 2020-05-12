@@ -31,8 +31,8 @@
 
             <?php
             // create user
-    /*        $user = new User();
-            $user->username = "Jolien";
+/*           $user = new User();
+            $user->username = "Sophia";
 
             $user->save();*/
             ?>
