@@ -4,6 +4,8 @@
 class User
 {
     protected static $db_table = "user";
+    protected static $db_table_fields = array('username', 'password', 'first_name', 'last_name');
+    
     public $id;
     public $username;
     public $password;
@@ -73,7 +75,7 @@ class User
         $properties = $this->properties();
 
         $sql = "INSERT INTO " . self::$db_table . " (" . implode(",", array_keys($properties)) . ")";
-        $sql .= " VALUES ('". implode(",", array_values($properties)) . "')";
+        $sql .= " VALUES ('". implode("','", array_values($properties)) . "')";
 
         if ($database->query($sql)){
             $this->id = $database->the_insert_id();
