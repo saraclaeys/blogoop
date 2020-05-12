@@ -112,6 +112,10 @@ class User
         return(mysqli_affected_rows($database->connection) == 1) ? true : false;
     }
 
+    protected function  properties(){
+        return get_object_vars($this);
+    }
+
     public function save(){
         return isset($this->id) ? $this->update() : $this->create();
     }
