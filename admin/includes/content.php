@@ -63,12 +63,12 @@
             ?>
 
             <?php
-            $photo = new Photo();
+          /*  $photo = new Photo();
             $photo->title = "SAM";
             $photo->description = "Lorem ipsum";
             $photo->size = 15;
 
-            $photo->save();
+            $photo->save();*/
 
             echo  INCLUDES_PATH
 
