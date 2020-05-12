@@ -29,36 +29,32 @@
             echo $user->username . ' - ' . $user->id . ' - ' . $user->first_name;
             ?>
 
-            <!--          --><?php
-            /*
-                        // create user
-                        $user = new User();
-                        $user->username = "Sam";
-                        $user->password = "123";
-                        $user->first_name = "Sam";
-                        $user->last_name = "Decursist";
+            <?php
 
-                        $user->create();
+            // create user
+            $user = new User();
+            $user->username = "Jolien";
+
+            $user->save();
+            ?>
+
+            <?php
+
+            // update user
+            $user = User::find_user_by_id(2);
+            $user->last_name = "Berbic";
+
+            $user->save();
+
+            ?>
+
+            <!--            --><?php
+            /*
+                        // delete user
+                        $user = User::find_user_by_id(5);
+                        $user->delete();
 
                         */ ?>
-
-            <!--     --><?php
-            /*
-                        // update user
-                        $user = User::find_user_by_id(2);
-                        $user->last_name = "Williams";
-
-                        $user->update();
-
-                        */ ?>
-
-<!--            --><?php
-/*
-            // delete user
-            $user = User::find_user_by_id(5);
-            $user->delete();
-
-            */?>
 
         </div>
         <!-- Earnings (Monthly) Card Example -->
