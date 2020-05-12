@@ -76,6 +76,8 @@ class User
 
         $sql = "INSERT INTO " . self::$db_table . " (" . implode(",", array_keys($properties)) . ")";
         $sql .= " VALUES ('". implode("','", array_values($properties)) . "')";
+        //testing
+        // var_dump($sql);
 
         if ($database->query($sql)){
             $this->id = $database->the_insert_id();
@@ -89,12 +91,15 @@ class User
 
     public function update(){
         global $database;
+        $properties = $this->properties();
+        $properties_assoc = array();
+
+        foreach ($properties as $key => $value){
+            $properties_assoc[] = "{key}='{value}'";
+        }
 
         $sql = "UPDATE " . self::$db_table . " SET ";
-        $sql .= "username= '" . $database->escape_string($this->username) . "' , ";
-        $sql .= "password= '" . $database->escape_string($this->password) . "' , ";
-        $sql .= "first_name= '" . $database->escape_string($this->first_name) . "' , ";
-        $sql .= "last_name= '" . $database->escape_string($this->last_name) . "' ";
+        $sql .= implode(",", $properties_assoc);
         $sql .= "WHERE id = " . $database->escape_string($this->id);
 
         $database->query($sql);
@@ -111,6 +116,10 @@ class User
         return(mysqli_affected_rows($database->connection) == 1) ? true : false;
     }
 
+    public function save(){
+        return isset($this->id) ? $this->update() : $this->create();
+    }
+
     protected function  properties(){
 //        return get_object_vars($this);
         $properties = array();
@@ -122,7 +131,15 @@ class User
         return $properties;
     }
 
-    public function save(){
-        return isset($this->id) ? $this->update() : $this->create();
+    protected function clean_properties(){
+        global $database;
+        $clean_properties = array();
+        foreach ($this->properties() as $key => $value){
+            $clean_properties[$key] = $database->escape_string(($value));
+        }
+        return $clean_properties;
     }
+
 }
+
+?>
