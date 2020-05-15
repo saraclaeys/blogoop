@@ -1,6 +1,29 @@
 <?php include ('includes/header.php'); ?>
 <?php include ('includes/sidebar.php'); ?>
 <?php include ('includes/content-top.php'); ?>
+
+<?php
+// inloggen
+if (!$session->is_signed_in()){
+    redirect('login.php');
+}
+
+// upload
+$message = "";
+if (isset($_POST['submit'])){
+    $photo = new Photo;
+    $photo->title = $_POST['title'];
+    $photo->set_file($_FILES['file']);
+
+    if ($photo->save()){
+        $message = "Photo uploaded succesfully";
+    } else {
+        $message = join("<br>", $photo->errors);
+    }
+}
+
+?>
+
 <div class="container-field">
     <div class="row">
         <div class="col-12">
