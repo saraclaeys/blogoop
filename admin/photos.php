@@ -14,7 +14,7 @@ $photos = Photo::find_all();
     <div class="row">
         <div class="col-12">
             <h2>PHOTOS</h2>
-            <table class="table table header">
+            <table class="table table-header">
                 <thead>
                 <tr>
                     <th>Photo</th>
@@ -24,6 +24,31 @@ $photos = Photo::find_all();
                     <th>Size</th>
                 </tr>
                 </thead>
+                <tbody>
+
+                <?php
+                foreach ($photos as $photo):
+                ?>
+
+                <tr>
+                    <td><img src="http://placehold.it/62x62" height="62" width="62" alt=""></td>
+                    <td>
+                        <?php echo $photo->photo_id; ?>
+                    </td>
+                    <td>
+                        <?php echo $photo->title; ?>
+                    </td>
+                    <td>
+                        <?php echo $photo->filename; ?>
+                    </td>
+                    <td>
+                        <?php echo $photo->size; ?>
+                    </td>
+                </tr>
+
+                <?php endforeach; ?>
+
+                </tbody>
             </table>
         </div>
     </div>
