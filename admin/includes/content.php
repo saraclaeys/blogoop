@@ -62,6 +62,7 @@
 
             ?>
 
+            <h3>Includes path?</h3>
             <?php
           /*  $photo = new Photo();
             $photo->title = "SAM";
