@@ -13,7 +13,9 @@ $photos = Photo::find_all();
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h2>PHOTOS</h2>
+            <h2 class="page-header">
+                PHOTOS
+            </h2>
             <table class="table table-header">
                 <thead>
                 <tr>
