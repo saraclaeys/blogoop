@@ -1,6 +1,6 @@
-<?php
+<?php include('includes/header.php');?>
 
-include('includes/header.php');
+<?php
 
 if (!$session->is_signed_in()) {
     redirect('login.php');
@@ -19,10 +19,10 @@ if ($photo) {
     redirect('photos.php');
 }
 
-include('includes/sidebar.php');
-include('includes/content-top.php');
-
 ?>
+
+<?php include('includes/sidebar.php'); ?>
+<?php include('includes/content-top.php'); ?>
 
 <h1>Welkom op de delete foto pagina</h1>
 

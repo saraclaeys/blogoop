@@ -47,7 +47,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="../../admin/photos.php">
             <i class="far fa-images"></i>
             <span>Photos</span></a>
     </li>

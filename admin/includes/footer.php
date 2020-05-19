@@ -55,6 +55,10 @@
 <script src="js/demo/chart-area-demo.js"></script>
 <script src="js/demo/chart-pie-demo.js"></script>
 
+<!-- TinyMCE JS editor-->
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script src="js/script.js"></script>
+
 </body>
 
 </html>

@@ -34,13 +34,17 @@ if (empty($_GET['id'])) {
             <h2 class="page-header">
                 Welkom op de edit photo pagina
             </h2>
-            <form action="edit_photo.php" method="post">
+            <form action="edit_photo.php?id=<?php echo $photo->id; ?>" method="post">
                 <div class="col-md-8">
                     <div class="form-group">
                         <label for="title">Title</label>
                         <input type="text" name="title" class="form-control" value="<?php echo $photo->title; ?>">
                     </div>
-                    <div class="form-group"><a href="#" class="thumbnail"><img src="<?php echo $photo->picture_path(); ?>" alt=""></a></div>
+                    <div class="form-group">
+                        <a href="#" class="thumbnail">
+                            <img src="<?php echo $photo->picture_path(); ?>" alt="">
+                        </a>
+                    </div>
                     <div class="form-group">
                         <label for="caption">Caption</label>
                         <input type="text" name="caption" class="form-control" value="<?php echo $photo->caption; ?>">
