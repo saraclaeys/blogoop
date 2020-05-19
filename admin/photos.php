@@ -10,6 +10,7 @@ $photos = Photo::find_all();
 <?php include('includes/sidebar.php'); ?>
 <?php include('includes/content-top.php'); ?>
 
+<!-- hier komt het overzicht van alle foto's -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
@@ -28,7 +29,7 @@ $photos = Photo::find_all();
                 </tr>
                 </thead>
                 <tbody>
-
+                <!-- start foreach -->
                 <?php
                 foreach ($photos as $photo):
                     ?>
@@ -57,7 +58,7 @@ $photos = Photo::find_all();
                     </tr>
 
                 <?php endforeach; ?>
-
+                <!-- einde foreach -->
                 </tbody>
             </table>
         </div>
