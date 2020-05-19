@@ -38,7 +38,7 @@ $photos = Photo::find_all();
                             <img src="<?php echo $photo->picture_path(); ?>" height="62" width="62" alt="">
                         </td>
                         <td>
-                            <?php echo $photo->photo_id; ?>
+                            <?php echo $photo->id; ?>
                         </td>
                         <td>
                             <?php echo $photo->title; ?>
@@ -50,7 +50,7 @@ $photos = Photo::find_all();
                             <?php echo $photo->size; ?>
                         </td>
                         <td>
-                            <a href="delete_photo.php?id= <?php echo $photo->photo_id; ?>" class="btn btn-danger rounded-0">
+                            <a href="delete_photo.php?id= <?php echo $photo->id; ?>" class="btn btn-danger rounded-0">
                                 <i class="fas fa-trash-alt"></i>
                             </a>
                         </td>
