@@ -24,6 +24,7 @@ $photos = Photo::find_all();
                     <th>Title</th>
                     <th>File</th>
                     <th>Size</th>
+                    <th>Delete?</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,6 +48,11 @@ $photos = Photo::find_all();
                         </td>
                         <td>
                             <?php echo $photo->size; ?>
+                        </td>
+                        <td>
+                            <a href="delete_photo.php?id= <?php echo $photo->photo_id; ?>" class="btn btn-danger rounded-0">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
                         </td>
                     </tr>
 
