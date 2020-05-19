@@ -6,6 +6,22 @@ if (!$session->is_signed_in()) {
 }
 
 // $photos = Photo::find_all();
+if (empty($_GET['id'])) {
+    redirect('photos.php');
+} else {
+    $photo = Photo::find_by_id($_GET['id']);
+    if(isset($_POST['update'])){
+        if ($photo){
+            $photo->title = $_POST['title'];
+            $photo->caption = $_POST['caption'];
+            $photo->description = $_POST['description'];
+            $photo->alternate_text = $_POST['alternate_text'];
+            $photo->type = $_POST['type'];
+            $photo->size = $_POST['size'];
+            $photo->update();
+        }
+    }
+}
 
 ?>
 
@@ -16,7 +32,7 @@ if (!$session->is_signed_in()) {
     <div class="row">
         <div class="col-12">
             <h2 class="page-header">
-                PHOTOS
+                Welkom op de edit photo pagina
             </h2>
             <form action="edit_photo.php" method="post">
                 <div class="col-md-8">
@@ -61,7 +77,8 @@ if (!$session->is_signed_in()) {
                             </div>
                             <div class="info-box-footer float-left">
                                 <div class="info-box-delete pull-left">
-                                    <a href="delete_photo.php?id=<?php echo $photo->id; ?>" class="btn btn-danger btn-lg">Delete</a>
+                                    <a href="delete_photo.php?id=<?php echo $photo->id; ?>"
+                                       class="btn btn-danger btn-lg">Delete</a>
                                 </div>
                                 <div class="info-box-update float-right">
                                     <input type="submit" name="update" value="update" class="btn btn-primary btn-lg">
