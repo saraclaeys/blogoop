@@ -30,23 +30,25 @@ $photos = Photo::find_all();
 
                 <?php
                 foreach ($photos as $photo):
-                ?>
+                    ?>
 
-                <tr>
-                    <td><img src="http://placehold.it/62x62" height="62" width="62" alt=""></td>
-                    <td>
-                        <?php echo $photo->photo_id; ?>
-                    </td>
-                    <td>
-                        <?php echo $photo->title; ?>
-                    </td>
-                    <td>
-                        <?php echo $photo->filename; ?>
-                    </td>
-                    <td>
-                        <?php echo $photo->size; ?>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <img src="<?php echo $photo->picture_path(); ?>" height="62" width="62" alt="">
+                        </td>
+                        <td>
+                            <?php echo $photo->photo_id; ?>
+                        </td>
+                        <td>
+                            <?php echo $photo->title; ?>
+                        </td>
+                        <td>
+                            <?php echo $photo->filename; ?>
+                        </td>
+                        <td>
+                            <?php echo $photo->size; ?>
+                        </td>
+                    </tr>
 
                 <?php endforeach; ?>
 
