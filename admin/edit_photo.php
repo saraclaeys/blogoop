@@ -38,18 +38,19 @@ if (empty($_GET['id'])) {
                 <div class="col-md-8">
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" name="title" class="form-control">
+                        <input type="text" name="title" class="form-control" value="<?php echo $photo->title; ?>">
                     </div>
+                    <div class="form-group"><a href="#" class="thumbnail"><img src="<?php echo $photo->picture_path(); ?>" alt=""></a></div>
                     <div class="form-group">
                         <label for="caption">Caption</label>
-                        <input type="text" name="caption" class="form-control">
+                        <input type="text" name="caption" class="form-control" value="<?php echo $photo->caption; ?>">
                     </div>
                     <div class="form-group">
                         <label for="alternate_text">Alternate text</label>
-                        <input type="text" name="alternate_text" class="form-control">
+                        <input type="text" name="alternate_text" class="form-control" value="<?php echo $photo->alternate_text; ?>">
                     </div>
                     <div class="form-group"><label for="description">Description</label>
-                        <textarea name="form-control" name="description" id="" cols="30" rows="10"></textarea>
+                        <textarea name="form-control" name="description" id="" cols="30" rows="10"><?php echo $photo->description; ?>"</textarea>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -63,16 +64,21 @@ if (empty($_GET['id'])) {
                                     <span class="fas fa-calendar">Uploaded on: April, 15, 2019 @ 7:54</span>
                                 </p>
                                 <p class="text">
-                                    Photo id: <span class="data photo_id_box">34</span>
+                                    <span class="data photo_id_box">Uploaded on: April, 15, 2019 @ 7:54</span>
+                                </p>
+                                <p class="text">
+                                    Photo id: <span class="data">34</span>
                                 </p>
                                 <p class="text">
                                     Filename: <span class="data">image.jpg</span>
                                 </p>
                                 <p class="text">
-                                    File Type: <span class="data">JPG</span>
+                                    <label for="type">File Type</label>
+                                    <input readonly type="text" name="type" class="form-control" value="<?php echo $photo->type; ?>">
                                 </p>
                                 <p class="text">
-                                    File Size: <span class="data">3547458</span>
+                                    <label for="size">File Size</label>
+                                    <input readonly type="text" name="size" class="form-control" value="<?php echo $photo->size; ?>">
                                 </p>
                             </div>
                             <div class="info-box-footer float-left">
