@@ -10,14 +10,14 @@ if (empty($_GET['id'])) {
     redirect('photos.php');
 } else {
     $photo = Photo::find_by_id($_GET['id']);
-    if(isset($_POST['update'])){
-        if ($photo){
+    if (isset($_POST['update'])) {
+        if ($photo) {
             $photo->title = $_POST['title'];
             $photo->caption = $_POST['caption'];
             $photo->description = $_POST['description'];
             $photo->alternate_text = $_POST['alternate_text'];
-            $photo->type = $_POST['type'];
-            $photo->size = $_POST['size'];
+            // $photo->type = $_POST['type'];
+            // $photo->size = $_POST['size'];
             $photo->update();
         }
     }
@@ -48,11 +48,13 @@ if (empty($_GET['id'])) {
                     </div>
                     <div class="form-group">
                         <label for="alternate_text">Alternate text:</label>
-                        <input type="text" name="alternate_text" class="form-control" value="<?php echo $photo->alternate_text; ?>">
+                        <input type="text" name="alternate_text" class="form-control"
+                               value="<?php echo $photo->alternate_text; ?>">
                     </div>
                     <div class="form-group">
                         <label for="description">Description:</label>
-                        <textarea name="description" id="" cols="30" rows="10" class="form-control"><?php echo $photo->description; ?></textarea>
+                        <textarea name="description" id="" cols="30" rows="10"
+                                  class="form-control"><?php echo $photo->description; ?></textarea>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -80,7 +82,8 @@ if (empty($_GET['id'])) {
                             </div>
                             <div class="info-box-footer">
                                 <div class="info-box-delete float-left">
-                                    <a href="delete_photo.php?id=<?php echo $photo->id; ?>" class="btn btn-danger btn-lg">Delete</a>
+                                    <a href="delete_photo.php?id=<?php echo $photo->id; ?>"
+                                       class="btn btn-danger btn-lg">Delete</a>
                                 </div>
                                 <div class="info-box-update float-right">
                                     <input type="submit" value="Update" name="update" class="btn btn-primary btn-lg">
