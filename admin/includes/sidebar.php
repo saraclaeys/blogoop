@@ -40,21 +40,21 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="upload.php">
             <i class="fas fa-upload"></i>
             <span>Upload</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="../../admin/photos.php">
+        <a class="nav-link" href="photos.php">
             <i class="far fa-images"></i>
             <span>Photos</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="comments.php">
             <i class="far fa-comments"></i>
             <span>Comments</span></a>
     </li>
