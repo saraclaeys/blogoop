@@ -70,7 +70,7 @@ class Photo extends Db_object
                     return true;
                 }
             } else {
-                $this->errors[] = "This folder had no write rights";
+                $this->errors[] = "This folder has no write rights";
                 return false;
             }
         }
