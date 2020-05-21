@@ -6,11 +6,12 @@ defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT . DS . 'admi
 defined('IMAGE_PATH') ? null : define('IMAGES_PATH', SITE_ROOT . DS . 'admin' . DS . 'img');
 
 
-require_once ('functions.php');
-require_once ('config.php');
-require_once ('Database.php');
-require_once ('Db_object.php');
-require_once ('User.php');
-require_once ('Photo.php');
-require_once ('Session.php');
+require_once (INCLUDES_PATH . DS . 'functions.php');
+require_once (INCLUDES_PATH . DS . 'config.php');
+require_once (INCLUDES_PATH . DS . 'Database.php');
+require_once (INCLUDES_PATH . DS . 'Db_object.php');
+require_once (INCLUDES_PATH . DS . 'User.php');
+require_once (INCLUDES_PATH . DS . 'Photo.php');
+require_once (INCLUDES_PATH . DS . 'Session.php');
+require_once (INCLUDES_PATH . DS . 'Comment.php');
 ?>
