@@ -40,7 +40,7 @@ $users = User::find_all();
                             <?php echo $user->id; ?>
                         </td>
                         <td>
-                            <img src="<?php echo "test" ?>" height="40" width="40" alt="">
+                            <img src="<?php echo $user->image_path_and_placeholder(); ?>" height="40" width="40" alt="">
                         </td>
                         <td>
                             <?php echo $user->username; ?>
