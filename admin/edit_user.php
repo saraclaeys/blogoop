@@ -68,6 +68,7 @@ if (isset($_POST['submit'])) {
                         <input type="file" name="file" class="form-control">
                     </div>
                     <input type="submit" name="submit" value="Update user" class="btn btn-primary">
+                    <a href="delete_user.php?id= <?php echo $user->id; ?>" class="btn btn-danger">Delete User?</a>
                 </div>
             </form>
         </div>
