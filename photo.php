@@ -2,12 +2,32 @@
 include ('includes/header.php');
 require_once ('admin/includes/init.php');
 
+if (empty($_GET['id'])){
+    redirect('index.php');
+}
+
 $photo = Photo::find_by_id($_GET['id']);
-echo $photo->title;
+// echo $photo->title;
 
 if (isset($_POST['submit'])){
-    echo 'hello';
+   // echo 'hello';
+    $author = trim($_POST['author']);
+    $body = trim($_POST['body']);
+
+    $new_comment = Comment::create_comment($photo->id, $author, $body);
+
+    if ($new_comment && $new_comment->save()){
+        redirect("photo.php?id={$photo->id}");
+    } else {
+        $message = "There are some problems saving";
+    }
+} else {
+    $author = "";
+    $body = "";
 }
+
+$comments = Comment::find_the_comment($photo->id);
+
 ?>
 
 <!-- Page Content -->
