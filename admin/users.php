@@ -17,7 +17,7 @@ $users = User::find_all();
             <h2 class="page-header">
                 USERS
             </h2>
-           <!-- <td><a href="add_user.php" class="btn btn-primary rounded-0"><i class="fas fa-user-plus"</i>Add user</a></td> -->
+           <a href="add_user.php" class="btn btn-primary rounded-0"><i class="fas fa-user-plus"></i>Add user</a>
             <table class="table table-header">
                 <thead>
                 <tr>

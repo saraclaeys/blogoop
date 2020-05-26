@@ -1,13 +1,24 @@
 <?php include('includes/header.php'); ?>
 
 <?php
-if (!$session->is_signed_in()) {
+/*if (!$session->is_signed_in()) {
     redirect('login.php');
+}*/
+
+$user = new User();
+if(isset($_POST['submit'])){
+    // user toevoegen aan database
+    $user->username = $_POST['username'];
+    $user->first_name = $_POST['first_name'];
+    $user->last_name = $_POST['last_name'];
+    $user->password = $_POST['password'];
+    //$user->set_file($_FILES['file']);
+    //$user->set_file($_FILES['file']);
+    //var_dump($user->set_file($_FILES['file']));
+    $user->save();
 }
 
-// $users = User::find_all();
-
-if (empty($_GET['id'])) {
+/*if (empty($_GET['id'])) {
     redirect('login.php');
 } else {
     $user = new User();
@@ -21,7 +32,7 @@ if (empty($_GET['id'])) {
             $user->save_user_and_image();
         }
     }
-}
+}*/
 
 ?>
 
@@ -33,7 +44,7 @@ if (empty($_GET['id'])) {
     <div class="row">
         <div class="col-12">
             <h2>Welkom op de add user pagina</h2>
-            <form action="add_user.php" method="post">
+            <form action="add_user.php" method="post" enctype="multipart/form-data">
                 <div class="col-md-8">
                     <div class="form-group">
                         <label for="title">Username:</label>
