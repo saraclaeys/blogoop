@@ -27,6 +27,7 @@ $photos = Photo::find_all();
                     <th>Filename</th>
                     <th>Alternate text</th>
                     <th>Size</th>
+                    <th>Comments</th>
                     <th>Edit?</th>
                     <th>Delete?</th>
                     <th>View?</th>
@@ -59,6 +60,14 @@ $photos = Photo::find_all();
                         </td>
                         <td>
                             <?php echo $photo->size; ?>
+                        </td>
+                        <td>
+                            <a href="comments_photo.php?id= <?php echo $photo->id; ?> ">
+                                <?php
+                                $comments = Comment::find_the_comment($photo->id);
+                                echo count($comments);
+                                ?>
+                            </a>
                         </td>
                         <td>
                             <a href="edit_photo.php?id= <?php echo $photo->id; ?>" class="btn btn-danger rounded-0">
