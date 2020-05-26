@@ -51,7 +51,7 @@ class User extends Db_object
 
     public function set_file($file)
     {
-        if (empty($file) || !$file || is_array($file)) {
+        if (empty($file) || !$file || !is_array($file)) {
             $this->errors[] = "No file uploaded";
             return false;
         } elseif ($file['error'] != 0) {
@@ -59,7 +59,7 @@ class User extends Db_object
             return false;
         } else {
             $this->user_image = basename($file['name']);
-            $this->tmp_path = $file['tmp_path'];
+            $this->tmp_path = $file['tmp_name'];
             $this->type = $file['type'];
             $this->size = $file['size'];
         }
@@ -73,11 +73,11 @@ class User extends Db_object
             $this->update();
             unset($this->tmp_path);
             return true;
-        }        else {
+        } else {
             if (!empty($this->errors)) {
                 return false;
             }
-            if (empty($this->user_image) || empty($this->temp_path)) {
+            if (empty($this->user_image) || empty($this->tmp_path)) {
                 $this->errors[] = "File not available";
                 return false;
             }

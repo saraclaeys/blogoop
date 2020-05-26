@@ -12,10 +12,8 @@ if(isset($_POST['submit'])){
     $user->first_name = $_POST['first_name'];
     $user->last_name = $_POST['last_name'];
     $user->password = $_POST['password'];
-    //$user->set_file($_FILES['file']);
-    //$user->set_file($_FILES['file']);
-    //var_dump($user->set_file($_FILES['file']));
-    $user->save();
+    $user->set_file($_FILES['file']);
+    $user->save_user_and_image();
 }
 
 /*if (empty($_GET['id'])) {
