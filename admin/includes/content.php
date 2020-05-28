@@ -84,7 +84,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Users
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($aantalUsers); ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo User::count_all(); ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -102,7 +102,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Aantal foto's
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($aantalPhotos); ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo Photo::count_all(); ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="far fa-images fa-2x text-gray-300"></i>
@@ -121,7 +121,7 @@
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Comments</div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo count($aantalComments); ?></div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo Comment::count_all(); ?></div>
                                 </div>
                             </div>
                         </div>
