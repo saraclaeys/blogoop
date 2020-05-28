@@ -31,10 +31,10 @@
 
             var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
-                ['Views',       <?php echo $session->count; ?>],
-                ['Comments',        <?php echo Comment::count_all(); ?>],
-                ['Users',   <?php echo User::count_all(); ?>],
-                ['Photos',  <?php echo Photo::count_all(); ?>]
+                ['Views',    <?php echo $session->count; ?>],
+                ['Comments', <?php echo Comment::count_all(); ?>],
+                ['Users',    <?php echo User::count_all(); ?>],
+                ['Photos',   <?php echo Photo::count_all(); ?>]
             ]);
 
             var options = {
