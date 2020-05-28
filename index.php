@@ -1,11 +1,24 @@
-<?php include ('includes/header.php'); ?>
+<?php include('includes/header.php'); ?>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <h1>Dit is de homepagina van het frontend gedeelte!</h1>
+<?php
+$photos = Photo::find_all();
+?>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1>Homepagina: photos</h1>
+                <?php foreach ($photos as $photo): ?>
+                    <div class="col-3">
+                        <a href="photo.php?id= <?php echo $photo->id; ?> ">
+                            <img src="<?php echo 'admin' . DS . $photo->picture_path(); ?>" alt="" class="img-fluid">
+                        </a>
+                    </div>
+
+                <?php endforeach; ?>
+
+            </div>
         </div>
     </div>
-</div>
 
-<?php include ('includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?>
