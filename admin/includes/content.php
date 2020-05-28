@@ -11,23 +11,23 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-12">
-            <h3>Alle users </h3>
+          <!--  <h3>Alle users </h3> -->
             <?php
-            $users = User::find_all();
+/*            $users = User::find_all();
             foreach ($users as $user) {
                 echo $user->username . "<br>";
             }
-            ?>
+            */?><!--
             <h3>Zoek user met id </h3>
-            <?php
+            --><?php
             /*$result = User::find_user_by_id(1);
             echo $result['username'] . "<br>";*/
 
-            $user = User::find_by_id(1);
+     /*       $user = User::find_by_id(1);
 
 
             echo $user->username . ' - ' . $user->id . ' - ' . $user->first_name;
-            ?>
+            */?>
 
             <?php
             // create user
@@ -53,17 +53,17 @@
 
             ?>
 
-            <h3>Alle foto's</h3>
+      <!--      <h3>Alle foto's</h3>
             <?php
-            $photos = Photo::find_all();
+/*            $photos = Photo::find_all();
             foreach ($photos as $photo){
                 echo $photo->title . "<br>";
             }
 
-            ?>
+            */?>
 
             <h3>Includes path?</h3>
-            <?php
+            --><?php
           /*  $photo = new Photo();
             $photo->title = "SAM";
             $photo->description = "Lorem ipsum";
@@ -71,7 +71,7 @@
 
             $photo->save();*/
 
-            echo  INCLUDES_PATH
+            // echo  INCLUDES_PATH
 
             ?>
 
@@ -132,6 +132,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="row">
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
     </div>
 
 </div>
