@@ -23,11 +23,10 @@ if (isset($_POST['submit'])) {
         } else {
             $user->set_file($_FILES['file']);
             $user->save_user_and_image();
-            $user->save;
+            // $user->save();
             redirect('edit_user.php?id={user->id}');
         }
     }
-
 }
 
 ?>
