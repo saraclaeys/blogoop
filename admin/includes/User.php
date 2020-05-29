@@ -58,7 +58,8 @@ class User extends Db_object
             $this->errors[] = $this->upload_errors_array[$file['error']];
             return false;
         } else {
-            $this->user_image = basename($file['name']);
+            // krijgt een uniek id doormiddel van datum en tijd
+            $this->user_image = date('m-d-Y_H-i-s') . basename($file['name']);
             $this->tmp_path = $file['tmp_name'];
             $this->type = $file['type'];
             $this->size = $file['size'];
