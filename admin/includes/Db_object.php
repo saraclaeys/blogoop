@@ -72,7 +72,7 @@ class Db_object
         $sql = "INSERT INTO " . static::$db_table . " (" . implode(",", array_keys($properties)) . ")";
         $sql .= " VALUES ('". implode("','", array_values($properties)) . "')";
         //testing
-        var_dump($sql);
+        // var_dump($sql);
 
         if ($database->query($sql)){
             $this->id = $database->the_insert_id();
