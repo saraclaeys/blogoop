@@ -1,9 +1,10 @@
 <?php include('includes/header.php'); ?>
 
 <?php
-if (!$session->is_signed_in()) {
+/*if (!$session->is_signed_in()) {
     redirect('login.php');
-}
+}*/
+
 $photos = Photo::find_all();
 ?>
 
@@ -28,9 +29,9 @@ $photos = Photo::find_all();
                     <th>Alternate text</th>
                     <th>Size</th>
                     <th>Comments</th>
+                    <th>View?</th>
                     <th>Edit?</th>
                     <th>Delete?</th>
-                    <th>View?</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -70,6 +71,9 @@ $photos = Photo::find_all();
                             </a>
                         </td>
                         <td>
+                            <a href="../photo.php?id= <?php echo $photo->id; ?>" class="btn btn-danger rounded-0"> <i class="fas fa-eye"></i> </a>
+                        </td>
+                        <td>
                             <a href="edit_photo.php?id= <?php echo $photo->id; ?>" class="btn btn-danger rounded-0">
                                 <i class="fas fa-edit"></i>
                             </a>
@@ -78,9 +82,6 @@ $photos = Photo::find_all();
                             <a href="delete_photo.php?id= <?php echo $photo->id; ?>" class="btn btn-danger rounded-0">
                                 <i class="fas fa-trash-alt"></i>
                             </a>
-                        </td>
-                        <td>
-                            <a href="../photo.php?id= <?php echo $photo->id; ?>" class="btn btn-danger rounded-0"> <i class="fas fa-eye"></i> </a>
                         </td>
                     </tr>
 

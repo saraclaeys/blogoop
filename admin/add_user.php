@@ -16,22 +16,6 @@ if(isset($_POST['submit'])){
     $user->save_user_and_image();
 }
 
-/*if (empty($_GET['id'])) {
-    redirect('login.php');
-} else {
-    $user = new User();
-    if (isset($_POST['submit'])) {
-        if ($user) {
-            $user->username = $_POST['username'];
-            $user->first_name = $_POST['first_name'];
-            $user->last_name = $_POST['last_name'];
-            $user->password = $_POST['password'];
-            $user->set_file($_FILES['file']);
-            $user->save_user_and_image();
-        }
-    }
-}*/
-
 ?>
 
 <?php include('includes/sidebar.php'); ?>

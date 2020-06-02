@@ -1,15 +1,16 @@
 <?php include ("includes/header.php"); ?>
 
 <?php
-if (!$session->is_signed_in()){
+/*if (!$session->is_signed_in()){
     redirect('login.php');
-}
+}*/
 
 if (empty($_GET['id'])){
     redirect("photos.php");
 }
 
 $comments = Comment::find_the_comment($_GET['id']);
+$photo = Photo::find_by_id($_GET['id']);
 ?>
 
 <?php include ("includes/sidebar.php"); ?>
@@ -20,9 +21,9 @@ $comments = Comment::find_the_comment($_GET['id']);
     <div class="row">
         <div class="col-12">
             <h2 class="page-header">
-                COMMENTS FOR THIS PHOTO
+                COMMENTS <?php echo $photo->title; ?>
             </h2>
-            <a href="add_comment.php" class="btn btn-primary rounded-0"><i class="fas fa-comment"></i>Add Comment</a>
+            <a href="../photo.php?id= <?php echo $_GET['id'] ?>" class="btn btn-primary rounded-0"><i class="fas fa-comment"></i>Add Comment</a>
             <table class="table table-header">
                 <thead>
                 <tr>

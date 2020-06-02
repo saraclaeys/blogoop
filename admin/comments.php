@@ -18,13 +18,12 @@ $comments = Comment::find_all();
             <h2 class="page-header">
                 COMMENTS
             </h2>
-            <a href="add_comment.php" class="btn btn-primary rounded-0"><i class="fas fa-comment"></i>Add Comment</a>
             <table class="table table-header">
                 <thead>
                 <tr>
                     <th>Id</th>
                     <th>Author</th>
-                    <th>body</th>
+                    <th>Body</th>
                     <th>Delete?</th>
                 </tr>
                 </thead>
