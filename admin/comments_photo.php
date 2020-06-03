@@ -21,7 +21,7 @@ $photo = Photo::find_by_id($_GET['id']);
     <div class="row">
         <div class="col-12">
             <h2 class="page-header">
-                COMMENTS <?php echo $photo->title; ?>
+                Comments for photo: <?php echo $photo->title; ?>
             </h2>
             <a href="../photo.php?id= <?php echo $_GET['id'] ?>" class="btn btn-primary rounded-0"><i class="fas fa-comment"></i>Add Comment</a>
             <table class="table table-header">

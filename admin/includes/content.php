@@ -3,79 +3,14 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <h1 class="h3 mb-0 text-gray-800">Dashboard Blog Sint-Niklaas</h1>
         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                     class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
     </div>
 
     <!-- Content Row -->
     <div class="row">
-        <div class="col-12">
-          <!--  <h3>Alle users </h3> -->
-            <?php
-/*            $users = User::find_all();
-            foreach ($users as $user) {
-                echo $user->username . "<br>";
-            }
-            */?><!--
-            <h3>Zoek user met id </h3>
-            --><?php
-            /*$result = User::find_user_by_id(1);
-            echo $result['username'] . "<br>";*/
 
-     /*       $user = User::find_by_id(1);
-
-
-            echo $user->username . ' - ' . $user->id . ' - ' . $user->first_name;
-            */?>
-
-            <?php
-            // create user
-/*           $user = new User();
-            $user->username = "Sophia";
-
-            $user->save();*/
-            ?>
-
-            <?php
-            // update user
-            /*   $user = User::find_by_id(2);
-               $user->last_name = "Berbic";
-
-               $user->save();*/
-
-            ?>
-
-            <?php
-            // delete user
-            /*      $user = User::find_by_id(4);
-                  $user->delete();*/
-
-            ?>
-
-      <!--      <h3>Alle foto's</h3>
-            <?php
-/*            $photos = Photo::find_all();
-            foreach ($photos as $photo){
-                echo $photo->title . "<br>";
-            }
-
-            */?>
-
-            <h3>Includes path?</h3>
-            --><?php
-          /*  $photo = new Photo();
-            $photo->title = "SAM";
-            $photo->description = "Lorem ipsum";
-            $photo->size = 15;
-
-            $photo->save();*/
-
-            // echo  INCLUDES_PATH
-
-            ?>
-
-        </div>
         <!-- Earnings (Monthly) Card Example -->
         <div class="col-12 col-md-4 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
@@ -135,7 +70,7 @@
     </div>
 
     <div class="row">
-        <div id="piechart" style="width: 900px; height: 500px;"></div>
+        <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
     </div>
 
 </div>
