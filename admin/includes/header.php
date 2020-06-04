@@ -1,9 +1,9 @@
 <?php require_once ("init.php"); ?>
 <?php ob_start();
 
-$aantalUsers = User::find_all();
+/*$aantalUsers = User::find_all();
 $aantalComments = Comment::find_all();
-$aantalPhotos = Photo::find_all();
+$aantalPhotos = Photo::find_all();*/
 
 ?>
 
@@ -43,7 +43,7 @@ $aantalPhotos = Photo::find_all();
 
             var options = {
                 pieSliceText: 'label',
-                title: 'My Daily Activities',
+                title: 'My Blog OOP',
                 is3D: true,
             };
 
